@@ -2,7 +2,7 @@
 
 int afficher_scores(){
     //affiche les scores déjà existant
-    string chemin = "scores.txt";
+    string chemin = "./txt/scores.txt";
     ifstream monFlux(chemin);
     string ligne;
     if(monFlux){

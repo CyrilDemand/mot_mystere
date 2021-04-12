@@ -4,11 +4,12 @@
 int jouer(){
     //la fonction qui lance le jeu
     int nombreDeMots = choisir_nombre_de_mots();
-    string const chemin = "liste_de_mots.txt";
+    string const chemin = "./txt/liste_de_mots.txt";
     vector<string> mots = choisir_des_mot_dans_un_fichier(chemin,nombreDeMots);
     int nombreDeCoups = 0;
     for (int i = 0; i < nombreDeMots; i++)
     {
+        cout<<mots[i];
         trouver_le_mot(nombreDeCoups, mots[i]);
     }
     score(nombreDeCoups, mots,nombreDeMots);
@@ -37,6 +38,7 @@ vector<string> choisir_des_mot_dans_un_fichier(string chemin, int nombreDeMots){
         int nombreAleatoire[nombreDeMots];
         monFlux.close();
         for(int i = 0;i<nombreDeMots;i++){
+            srand(rand()%55);
             nombreAleatoire[i] = rand()%nbMots;
             cout<<nombreAleatoire[i]<<endl;
         }
@@ -56,12 +58,6 @@ vector<string> choisir_des_mot_dans_un_fichier(string chemin, int nombreDeMots){
     }
     monFlux.close();
     return mots;
-}
-
-int choixRandom(int max){
-    srand(time(0));
-    cout<<rand()%max<<endl;
-    return rand()%max;
 }
 
 int nombre_de_mots_dans_fichier(string chemin){
