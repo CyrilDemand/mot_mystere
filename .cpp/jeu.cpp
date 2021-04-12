@@ -40,7 +40,6 @@ vector<string> choisir_des_mot_dans_un_fichier(string chemin, int nombreDeMots){
         for(int i = 0;i<nombreDeMots;i++){
             srand(rand()%55);
             nombreAleatoire[i] = rand()%nbMots;
-            cout<<nombreAleatoire[i]<<endl;
         }
         ifstream monFlux(chemin);
         string mot="";
@@ -78,7 +77,7 @@ bool trouver_le_mot(int& nombreDeCoups,string motATrouver){
     string propositionUtiliateur; // ce que rentre l'utilisateur
     string motVisible = mot_etoile(motATrouver.length()); // de base l'utilisateur voit le mot sous la forme d'une suite d'étoiles
     cout<<motVisible<<endl;
-    cout<<motATrouver<<endl;
+    cout<<"il se peut qu'il y ait des mots qu'on ne puisse pas taper donc au cas ou la reponse est : "<<motATrouver<<endl;
     while (motVisible.compare(motATrouver)!=0 && propositionUtiliateur.compare(motATrouver)!=0)
     {
         cin>>propositionUtiliateur;

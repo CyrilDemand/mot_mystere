@@ -28,7 +28,7 @@ void score(int nombreCoups, vector<string> mots,int nombreDeMots){
 
 void sauvegarde_scores(string prenom,int nombreCoups,vector<string> mots,int nombreDeMots){
     //nom de la fonction assez explicite
-    string chemin = "scores.txt";
+    string chemin = "./txt/scores.txt";
     ofstream monFlux(chemin);
     monFlux<<scores_to_string(prenom,nombreCoups,mots,nombreDeMots)<<endl;
 }
